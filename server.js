@@ -11,12 +11,13 @@ app.use(express.static("public"));
 const port = (process.env.PORT || 3000);
 // CONNECTIONS
 app.listen(port, () => {
-  console.log("listening on port: ", port);
+  console.log("....... listening on port: ", port);
 });
 // require("dotenv").config();
 
 const dbURI = (process.env.MONGODB_URI || "mongodb://localhost:27017/pollappdb");
 
+console.log("..... dbURI ", dbURI);
 //Mongoose
 // const mongoose = require("mongoose");
 // mongoose.connect("mongodb://localhost:27017/pollappdb", {
