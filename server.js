@@ -15,11 +15,20 @@ app.listen(port, () => {
 });
 // require("dotenv").config();
 
+const dbURI = (process.env.MONGODB_URI || "mongodb://localhost:27017/pollappdb");
+
 //Mongoose
+// const mongoose = require("mongoose");
+// mongoose.connect("mongodb://localhost:27017/pollappdb", {
+//   useNewUrlParser: true
+// });
+
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/pollappdb", {
+mongoose.connect(dbURI, {
   useNewUrlParser: true
 });
+
+
 mongoose.set("useFindAndModify", false);
 mongoose.connection.once("open", () => {
   console.log("connected to mongo");
