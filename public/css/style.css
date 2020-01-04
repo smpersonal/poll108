@@ -1,0 +1,1018 @@
+:root {
+  --dark-pink: #b4186e;
+  --dark-pink-gray: #201c1f;
+  --yellow-sapphire: #fada5e;
+  --text-gray-medium: #999;
+  --background-gray: #eee;
+  --background-a-gray: #aaa;
+  --background-b-gray: #bbb;
+  --background-ef-gray: #efefef;
+  --background-fe-gray: #fefefe;
+  --background-gray-30: rgba(50, 50, 50, 0.7);
+  --button-pink-gray: #e8e8fa;
+  --rdr-ruby: #e0115f;
+  --rdr-pearl: #eae0c8;
+  --rdr-light-pearl: #ece9d8;
+  --rdr-coral: #ff4040;
+  --rdr-emerald: #50c878;
+  --rdr-dark-emerald: #2e9549;
+  --rdr-yellow-sapphire: #fada5e;
+  --rdr-blue-sapphire: #0067a5;
+  --rdr-hessonite: #cbb36d;
+  --rdr-cats-eye: #789753;
+}
+
+.colr1 {
+  background-color: var(--rdr-dark-random1);
+}
+.colr2 {
+  background-color: var(--rdr-dark-random2);
+}
+/* 
+  --rdr-dark-random2: #789753;
+  --rdr-dark-random3: #ff4040;
+  --rdr-dark-random4: #50c878;
+  --rdr-dark-random5: #0067a5;
+
+  --rdr-light-random1: #f1f7fb;
+  --rdr-light-random2: #eae0c8;
+  --rdr-light-random3: #cbb36d;
+  --rdr-light-random4: #fada5e;
+  --rdr-light-random5: #fafafa;
+} */
+
+body {
+  background-color: var(--rdr-light-pearl);
+  /* border: 1px solid purple !important; */
+}
+.container {
+  /* display: flex; */
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+}
+
+h1 {
+  font-size: 40px;
+  display: block;
+}
+header,
+.headersubtext,
+section {
+  display: block;
+  align-content: center;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.form-container {
+  display: block;
+}
+
+.rdr-shadow-2dp {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 2px 3px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 83ms;
+}
+
+/* MAIN INDEX PAGE */
+.mainindexcards {
+  display: inline-flex;
+  font-size: 30px;
+  background-color: var(--rdr-diamond);
+  justify-content: space-between;
+  width: 30%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  /* border: 1px solid purple; */
+  padding: 40px;
+}
+.mainindexcards > a {
+  color: var(--rdr-emerald);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.mainindexcards > a:hover {
+  text-decoration: none;
+}
+
+.mainindexcards:hover {
+  background-color: white;
+}
+
+/* MAIN INDEX PAGE */
+
+/* POLLS INDEX PAGE */
+.headerlinks {
+  display: inline;
+  background-color: white;
+  text-align: center;
+  flex-grow: 1;
+  margin: 0 2px;
+  border-radius: 2px;
+}
+.headerlinks > a {
+  text-align: center;
+}
+.pollsmain {
+  display: block;
+}
+.pollssection {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  /* padding: 5px; */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.polltitletext {
+  height: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.polltitlecard {
+  /* display: table-cell; */
+  /* background: var(--rdr-dark-emerald); */
+  padding: auto 5px;
+  width: 150px;
+  text-transform: lowercase;
+  min-height: 150px;
+  height: 150px;
+  /* line-height: 150px; */
+  word-wrap: break-word;
+  margin-top: 10px;
+  color: white;
+  text-shadow: -2px 2px #777;
+  font-size: 20px;
+  vertical-align: middle;
+  font-family: "Montserrat";
+  font-size: 20px;
+  text-align: center;
+  /* color: rgba(0, 0, 0, 0.7) !important; */
+  line-height: 1.25em;
+  border-radius: 50%;
+  box-shadow: -2px 3px 4px #777;
+}
+.textmiddlealign {
+  /* Internet Explorer 10 */
+  display: -ms-flexbox;
+  -ms-flex-pack: center;
+  -ms-flex-align: center;
+
+  /* Firefox */
+  display: -moz-box;
+  -moz-box-pack: center;
+  -moz-box-align: center;
+
+  /* Safari, Opera, and Chrome */
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+
+  /* W3C */
+  display: box;
+  box-pack: center;
+  box-align: center;
+}
+.polltitlecard > a {
+  color: white;
+}
+
+/* NEW POLL  */
+
+.pollquestion {
+  width: 100%;
+  padding: 5px;
+}
+
+.submithide {
+  display: none;
+  transition: display 830ms;
+}
+
+.form-bottom-label {
+  min-width: 50%;
+  text-align: left;
+  text-transform: none;
+}
+
+/* SHOW.EJS */
+
+.questionBox {
+  border: 2px solid #777;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: auto;
+  padding: 10px;
+  font-size: 30px;
+}
+
+.pollQuestion {
+  display: block;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--rdr-blue-sapphire);
+  text-transform: uppercase;
+  font-style: italic;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  height: auto;
+}
+.answersTable {
+  display: block;
+  height: auto;
+  padding: 15px;
+}
+table {
+  width: 100%;
+}
+.pollAnswers {
+  font-weight: 400;
+  color: var(--text-gray-medium);
+  font-size: 20px;
+  width: 60%;
+}
+td {
+  width: 30%;
+}
+th,
+td {
+  border-bottom: 1px dotted var(--rdr-ruby);
+}
+.answerCell {
+  min-width: 70%;
+}
+.valueCell,
+.radioButtonCell {
+  min-width: 15%;
+  text-align: center;
+}
+
+.tinyBox {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  background-color: var(--rdr-emerald);
+  letter-spacing: -10px;
+  font-size: 0px;
+}
+.submitLine {
+  display: block;
+  padding: 10px;
+  text-align: right;
+}
+
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  background-color: var(--rdr-ruby);
+  color: white;
+  font-size: 15px;
+  font-weight: normal;
+}
+
+/* New Poll */
+.pollAnswersAdd {
+  width: 100%;
+  text-transform: none;
+}
+/* //////// */
+
+.bkcolorchange1 {
+  background: #aeccfc;
+  -webkit-animation: mymove 38s infinite; /* Safari 4.0 - 8.0 */
+  animation: mymove 38s infinite;
+}
+
+.bkcolorchange2 {
+  background: var(--rdr-pearl);
+  -webkit-animation: mymove 27s infinite; /* Safari 4.0 - 8.0 */
+  animation: mymove 27s infinite;
+}
+
+.bkcolorchange3 {
+  background: var(--rdr-dark-emerald);
+  -webkit-animation: mymove 108s infinite; /* Safari 4.0 - 8.0 */
+  animation: mymove 50s infinite;
+}
+
+.bkcolorchange4 {
+  background: var(--rdr-ruby);
+  -webkit-animation: mymove 108s infinite; /* Safari 4.0 - 8.0 */
+  animation: mymove 30s infinite;
+}
+
+.bkcolorchange5 {
+  background: var(--rdr-emerald);
+  -webkit-animation: mymove 108s infinite; /* Safari 4.0 - 8.0 */
+  animation: mymove 40s infinite;
+}
+
+.bkcolorchange6 {
+  background: var(--rdr-blue-sapphire);
+  -webkit-animation: mymove 108s infinite; /* Safari 4.0 - 8.0 */
+  animation: mymove 80s infinite;
+}
+
+.bkcolorchange7 {
+  background: var(--rdr-yellow-sapphire);
+  -webkit-animation: mymove 108s infinite; /* Safari 4.0 - 8.0 */
+  animation: mymove 140s infinite;
+}
+
+.bkcolorchange8 {
+  background: var(--rdr-cats-eye);
+  -webkit-animation: mymove 108s infinite; /* Safari 4.0 - 8.0 */
+  animation: mymove 20s infinite;
+}
+
+.bkcolorchange9 {
+  background: var(--rdr-coral);
+  -webkit-animation: mymove 108s infinite; /* Safari 4.0 - 8.0 */
+  animation: mymove 70s infinite;
+}
+
+.bkcolorchange10 {
+  background: var(--rdr-hessonite);
+  -webkit-animation: mymove 12s infinite; /* Safari 4.0 - 8.0 */
+  animation: mymove 12s infinite;
+}
+
+.bkcolorchange11 {
+  background: var(--rdr-coral);
+  -webkit-animation: mymove 10s infinite; /* Safari 4.0 - 8.0 */
+  animation: mymove 10s infinite;
+}
+
+.bkcolorchange12 {
+  background: purple;
+  -webkit-animation: mymove 18s infinite; /* Safari 4.0 - 8.0 */
+  animation: mymove 18s infinite;
+}
+
+.bkcolorchange13 {
+  background: blue;
+  -webkit-animation: mymove 38s infinite; /* Safari 4.0 - 8.0 */
+  animation: mymove 38s infinite;
+}
+
+.bkcolorchange14 {
+  background: var(--rdr-cats-eye);
+  -webkit-animation: mymove 28s infinite; /* Safari 4.0 - 8.0 */
+  animation: mymove 28s infinite;
+}
+
+.bkcolorchange15 {
+  background: burlywood;
+  -webkit-animation: mymove 66s infinite; /* Safari 4.0 - 8.0 */
+  animation: mymove 66s infinite;
+}
+
+.rdr_container {
+  width: 90%;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes mymove {
+  /* 0%   {background: #c6ffdf;}
+    25%  {background: #f7d4db;}
+    50%  {background: #c9c600;}
+    75%  {background: #a5ef64;}
+    100% {background: #ff9ba2;}*/
+
+  0% {
+    background: rgb(224, 17, 95);
+  }
+  1% {
+    background: rgb(225, 36, 105);
+  }
+  2% {
+    background: rgb(226, 55, 115);
+  }
+  3% {
+    background: rgb(227, 74, 125);
+  }
+  4% {
+    background: rgb(228, 93, 135);
+  }
+  5% {
+    background: rgb(229, 112, 145);
+  }
+  6% {
+    background: rgb(230, 131, 155);
+  }
+  7% {
+    background: rgb(231, 150, 165);
+  }
+  8% {
+    background: rgb(232, 169, 175);
+  }
+  9% {
+    background: rgb(233, 188, 185);
+  }
+  10% {
+    background: rgb(234, 207, 195);
+  }
+  11% {
+    background: rgb(235, 226, 205);
+  }
+  12% {
+    background: rgb(237, 211, 193);
+  }
+  13% {
+    background: rgb(239, 196, 181);
+  }
+  14% {
+    background: rgb(241, 181, 169);
+  }
+  15% {
+    background: rgb(243, 166, 157);
+  }
+  16% {
+    background: rgb(245, 151, 145);
+  }
+  17% {
+    background: rgb(247, 136, 133);
+  }
+  18% {
+    background: rgb(249, 121, 121);
+  }
+  19% {
+    background: rgb(251, 106, 109);
+  }
+  20% {
+    background: rgb(253, 91, 97);
+  }
+  21% {
+    background: rgb(255, 76, 85);
+  }
+  22% {
+    background: rgb(255, 61, 73);
+  }
+  23% {
+    background: rgb(239, 73, 78);
+  }
+  24% {
+    background: rgb(223, 85, 83);
+  }
+  25% {
+    background: rgb(207, 97, 88);
+  }
+  26% {
+    background: rgb(191, 109, 93);
+  }
+  27% {
+    background: rgb(175, 121, 98);
+  }
+  28% {
+    background: rgb(159, 133, 103);
+  }
+  29% {
+    background: rgb(143, 145, 108);
+  }
+  30% {
+    background: rgb(127, 157, 113);
+  }
+  31% {
+    background: rgb(111, 169, 118);
+  }
+  32% {
+    background: rgb(95, 181, 123);
+  }
+  33% {
+    background: rgb(79, 193, 128);
+  }
+  34% {
+    background: rgb(94, 195, 126);
+  }
+  35% {
+    background: rgb(109, 197, 124);
+  }
+  36% {
+    background: rgb(124, 199, 122);
+  }
+  37% {
+    background: rgb(139, 201, 120);
+  }
+  38% {
+    background: rgb(154, 203, 118);
+  }
+  39% {
+    background: rgb(169, 205, 116);
+  }
+  40% {
+    background: rgb(184, 207, 114);
+  }
+  41% {
+    background: rgb(199, 209, 112);
+  }
+  42% {
+    background: rgb(214, 211, 110);
+  }
+  43% {
+    background: rgb(229, 213, 108);
+  }
+  44% {
+    background: rgb(244, 215, 106);
+  }
+  45% {
+    background: rgb(243, 218, 120);
+  }
+  46% {
+    background: rgb(242, 221, 134);
+  }
+  47% {
+    background: rgb(241, 224, 148);
+  }
+  48% {
+    background: rgb(240, 227, 162);
+  }
+  49% {
+    background: rgb(239, 230, 176);
+  }
+  50% {
+    background: rgb(238, 233, 190);
+  }
+  51% {
+    background: rgb(237, 236, 204);
+  }
+  52% {
+    background: rgb(236, 239, 218);
+  }
+  53% {
+    background: rgb(235, 242, 232);
+  }
+  54% {
+    background: rgb(234, 245, 246);
+  }
+  55% {
+    background: rgb(233, 248, 255);
+  }
+  56% {
+    background: rgb(211, 235, 247);
+  }
+  57% {
+    background: rgb(189, 222, 239);
+  }
+  58% {
+    background: rgb(167, 209, 231);
+  }
+  59% {
+    background: rgb(145, 196, 223);
+  }
+  60% {
+    background: rgb(123, 183, 215);
+  }
+  61% {
+    background: rgb(101, 170, 207);
+  }
+  62% {
+    background: rgb(79, 157, 199);
+  }
+  63% {
+    background: rgb(57, 144, 191);
+  }
+  64% {
+    background: rgb(35, 131, 183);
+  }
+  65% {
+    background: rgb(13, 118, 175);
+  }
+  66% {
+    background: rgb(0, 105, 167);
+  }
+  67% {
+    background: rgb(18, 112, 162);
+  }
+  68% {
+    background: rgb(36, 119, 157);
+  }
+  69% {
+    background: rgb(54, 126, 152);
+  }
+  70% {
+    background: rgb(72, 133, 147);
+  }
+  71% {
+    background: rgb(90, 140, 142);
+  }
+  72% {
+    background: rgb(108, 147, 137);
+  }
+  73% {
+    background: rgb(126, 154, 132);
+  }
+  74% {
+    background: rgb(144, 161, 127);
+  }
+  75% {
+    background: rgb(162, 168, 122);
+  }
+  76% {
+    background: rgb(180, 175, 117);
+  }
+  77% {
+    background: rgb(198, 182, 112);
+  }
+  78% {
+    background: rgb(190, 179, 110);
+  }
+  79% {
+    background: rgb(182, 176, 108);
+  }
+  80% {
+    background: rgb(174, 173, 106);
+  }
+  81% {
+    background: rgb(166, 170, 104);
+  }
+  82% {
+    background: rgb(158, 167, 102);
+  }
+  83% {
+    background: rgb(150, 164, 100);
+  }
+  84% {
+    background: rgb(142, 161, 98);
+  }
+  85% {
+    background: rgb(134, 158, 96);
+  }
+  86% {
+    background: rgb(126, 155, 94);
+  }
+  87% {
+    background: rgb(118, 152, 92);
+  }
+  88% {
+    background: rgb(110, 149, 90);
+  }
+  89% {
+    background: rgb(119, 137, 91);
+  }
+  90% {
+    background: rgb(128, 125, 92);
+  }
+  91% {
+    background: rgb(137, 113, 93);
+  }
+  92% {
+    background: rgb(146, 101, 94);
+  }
+  93% {
+    background: rgb(155, 89, 95);
+  }
+  94% {
+    background: rgb(164, 77, 96);
+  }
+  95% {
+    background: rgb(173, 65, 97);
+  }
+  96% {
+    background: rgb(182, 53, 98);
+  }
+  97% {
+    background: rgb(191, 41, 99);
+  }
+  98% {
+    background: rgb(200, 29, 100);
+  }
+  99% {
+    background: rgb(209, 17, 101);
+  }
+  100% {
+    background: rgb(224, 17, 95);
+  }
+}
+@-keyframes mymove {
+  /* 0%   {background: #c6ffdf;}
+    25%  {background: #f7d4db;}
+    50%  {background: #c9c600;}
+    75%  {background: #a5ef64;}
+    100% {background: #ff9ba2;}*/
+  0% {
+    background: rgb(224, 17, 95);
+  }
+  1% {
+    background: rgb(225, 36, 105);
+  }
+  2% {
+    background: rgb(226, 55, 115);
+  }
+  3% {
+    background: rgb(227, 74, 125);
+  }
+  4% {
+    background: rgb(228, 93, 135);
+  }
+  5% {
+    background: rgb(229, 112, 145);
+  }
+  6% {
+    background: rgb(230, 131, 155);
+  }
+  7% {
+    background: rgb(231, 150, 165);
+  }
+  8% {
+    background: rgb(232, 169, 175);
+  }
+  9% {
+    background: rgb(233, 188, 185);
+  }
+  10% {
+    background: rgb(234, 207, 195);
+  }
+  11% {
+    background: rgb(235, 226, 205);
+  }
+  12% {
+    background: rgb(237, 211, 193);
+  }
+  13% {
+    background: rgb(239, 196, 181);
+  }
+  14% {
+    background: rgb(241, 181, 169);
+  }
+  15% {
+    background: rgb(243, 166, 157);
+  }
+  16% {
+    background: rgb(245, 151, 145);
+  }
+  17% {
+    background: rgb(247, 136, 133);
+  }
+  18% {
+    background: rgb(249, 121, 121);
+  }
+  19% {
+    background: rgb(251, 106, 109);
+  }
+  20% {
+    background: rgb(253, 91, 97);
+  }
+  21% {
+    background: rgb(255, 76, 85);
+  }
+  22% {
+    background: rgb(255, 61, 73);
+  }
+  23% {
+    background: rgb(239, 73, 78);
+  }
+  24% {
+    background: rgb(223, 85, 83);
+  }
+  25% {
+    background: rgb(207, 97, 88);
+  }
+  26% {
+    background: rgb(191, 109, 93);
+  }
+  27% {
+    background: rgb(175, 121, 98);
+  }
+  28% {
+    background: rgb(159, 133, 103);
+  }
+  29% {
+    background: rgb(143, 145, 108);
+  }
+  30% {
+    background: rgb(127, 157, 113);
+  }
+  31% {
+    background: rgb(111, 169, 118);
+  }
+  32% {
+    background: rgb(95, 181, 123);
+  }
+  33% {
+    background: rgb(79, 193, 128);
+  }
+  34% {
+    background: rgb(94, 195, 126);
+  }
+  35% {
+    background: rgb(109, 197, 124);
+  }
+  36% {
+    background: rgb(124, 199, 122);
+  }
+  37% {
+    background: rgb(139, 201, 120);
+  }
+  38% {
+    background: rgb(154, 203, 118);
+  }
+  39% {
+    background: rgb(169, 205, 116);
+  }
+  40% {
+    background: rgb(184, 207, 114);
+  }
+  41% {
+    background: rgb(199, 209, 112);
+  }
+  42% {
+    background: rgb(214, 211, 110);
+  }
+  43% {
+    background: rgb(229, 213, 108);
+  }
+  44% {
+    background: rgb(244, 215, 106);
+  }
+  45% {
+    background: rgb(243, 218, 120);
+  }
+  46% {
+    background: rgb(242, 221, 134);
+  }
+  47% {
+    background: rgb(241, 224, 148);
+  }
+  48% {
+    background: rgb(240, 227, 162);
+  }
+  49% {
+    background: rgb(239, 230, 176);
+  }
+  50% {
+    background: rgb(238, 233, 190);
+  }
+  51% {
+    background: rgb(237, 236, 204);
+  }
+  52% {
+    background: rgb(236, 239, 218);
+  }
+  53% {
+    background: rgb(235, 242, 232);
+  }
+  54% {
+    background: rgb(234, 245, 246);
+  }
+  55% {
+    background: rgb(233, 248, 255);
+  }
+  56% {
+    background: rgb(211, 235, 247);
+  }
+  57% {
+    background: rgb(189, 222, 239);
+  }
+  58% {
+    background: rgb(167, 209, 231);
+  }
+  59% {
+    background: rgb(145, 196, 223);
+  }
+  60% {
+    background: rgb(123, 183, 215);
+  }
+  61% {
+    background: rgb(101, 170, 207);
+  }
+  62% {
+    background: rgb(79, 157, 199);
+  }
+  63% {
+    background: rgb(57, 144, 191);
+  }
+  64% {
+    background: rgb(35, 131, 183);
+  }
+  65% {
+    background: rgb(13, 118, 175);
+  }
+  66% {
+    background: rgb(0, 105, 167);
+  }
+  67% {
+    background: rgb(18, 112, 162);
+  }
+  68% {
+    background: rgb(36, 119, 157);
+  }
+  69% {
+    background: rgb(54, 126, 152);
+  }
+  70% {
+    background: rgb(72, 133, 147);
+  }
+  71% {
+    background: rgb(90, 140, 142);
+  }
+  72% {
+    background: rgb(108, 147, 137);
+  }
+  73% {
+    background: rgb(126, 154, 132);
+  }
+  74% {
+    background: rgb(144, 161, 127);
+  }
+  75% {
+    background: rgb(162, 168, 122);
+  }
+  76% {
+    background: rgb(180, 175, 117);
+  }
+  77% {
+    background: rgb(198, 182, 112);
+  }
+  78% {
+    background: rgb(190, 179, 110);
+  }
+  79% {
+    background: rgb(182, 176, 108);
+  }
+  80% {
+    background: rgb(174, 173, 106);
+  }
+  81% {
+    background: rgb(166, 170, 104);
+  }
+  82% {
+    background: rgb(158, 167, 102);
+  }
+  83% {
+    background: rgb(150, 164, 100);
+  }
+  84% {
+    background: rgb(142, 161, 98);
+  }
+  85% {
+    background: rgb(134, 158, 96);
+  }
+  86% {
+    background: rgb(126, 155, 94);
+  }
+  87% {
+    background: rgb(118, 152, 92);
+  }
+  88% {
+    background: rgb(110, 149, 90);
+  }
+  89% {
+    background: rgb(119, 137, 91);
+  }
+  90% {
+    background: rgb(128, 125, 92);
+  }
+  91% {
+    background: rgb(137, 113, 93);
+  }
+  92% {
+    background: rgb(146, 101, 94);
+  }
+  93% {
+    background: rgb(155, 89, 95);
+  }
+  94% {
+    background: rgb(164, 77, 96);
+  }
+  95% {
+    background: rgb(173, 65, 97);
+  }
+  96% {
+    background: rgb(182, 53, 98);
+  }
+  97% {
+    background: rgb(191, 41, 99);
+  }
+  98% {
+    background: rgb(200, 29, 100);
+  }
+  99% {
+    background: rgb(209, 17, 101);
+  }
+  100% {
+    background: rgb(224, 17, 95);
+  }
+}

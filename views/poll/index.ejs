@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <%- include ../../public/ejs/header_links.ejs %>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>POLLS UNLIMITED</h1>
+        <div class="headersubtext">
+          Let's get started!
+        </div>
+
+        <div class="pollssection">
+          <div class="headerlinks rdr-shadow-2dp " >
+            <a href="/">Home</a>
+          </div>
+          <div class="headerlinks rdr-shadow-2dp col-md-6 col-xs-12 col-lg-6 col-sm-12">
+            <a class="headerlinks" href="/poll/new">Add a new poll</a>
+          </div>
+        </div>
+
+      </header>
+
+      <div class="pollsmain" id="pollsmain"> 
+        
+        <div class="pollssection ">
+            <% for(let i = 0; i < polls.length; i++){ 
+              idx=(i%15+1);
+              %>
+            <div class="polltitlecard  textmiddlealign rdr-shadow-2dp bkcolorchange<%=idx%>"   >
+              <a href="/poll/show/<%=polls[i].id%>?_method=GET">
+<p class="polltitletext">               <%=polls[i].Question; %></p> 
+              </a>
+            </div>
+            <%
+            } %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

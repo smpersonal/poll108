@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <%- include ../../public/ejs/header_links.ejs %>
+    <title>Poll App</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <h1>HELLO POLL MAKER</h1>
+        <div class="headersubtext">
+          Ask away!
+        </div>
+
+        <div class="pollssection">
+          <div class="headerlinks rdr-shadow-2dp ">
+            <a href="/">Home</a>
+          </div>
+          <div
+            class="headerlinks rdr-shadow-2dp col-md-6 col-xs-12 col-lg-6 col-sm-12"
+          >
+            <a class="headerlinks" href="/poll/new">Add a new poll</a>
+          </div>
+        </div>
+      </header>
+
+      <div class="questionBox rdr-shadow-2dp pollQuestion">
+        <label class="form-container " for="Question">Question</label>
+        <input
+          type="text"
+          class="pollquestion"
+          id="pollquestion"
+          name="Question"
+          placeholder="Add a question and press Enter"
+        />
+        <!-- This is the div where input for answer options comes up dynamicallyß -->
+        <div id="restOfPage" class="submithide">
+          <div id="answersHeader" class=" pollAnswersAdd submithide">
+            Add the poll answer options here
+          </div>
+          <div id="ansgrp" class="answeroptionsgrp pollAnswersAdd"></div>
+          <!-- This is the div where input for answer options comes up dynamicallyß -->
+
+          <label class="form-bottom-label" for="PublishStatus"
+            >Check the box to Publish poll
+            <span style="margin-left:10px;">
+              <input
+                type="checkbox"
+                name="PublishStatus"
+                id="PublishStatus"
+                value="0"/></span
+          ></label>
+
+          <label class="form-bottom-label" for="RestrictAccess">
+            Check the box to Restrict Access to logged in users
+            <span style="margin-left:10px;">
+              <input
+                type="checkbox"
+                name="RestrictAccess"
+                id="RestrictAccess"
+                value="0"/></span
+          ></label>
+          <form onsubmit="return false;" id="submitform" class="submithide">
+            <input
+              class="form-container  answersubmit "
+              id="submitbutton"
+              type="submit"
+              value="Create Poll"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(() => {
+        //
+        console.log("COMMONSCRIPTS.js running  ----- ONPAGE");
+        let i = 0;
+        let statarr = [];
+
+        const addNewInputLine = currentVal => {
+          i++;
+          let newFormLabel = $("<label>");
+          newFormLabel.attr("for", `Answeroptions${currentVal}`);
+          newFormLabel.attr("text", `Answeroptions${currentVal}`);
+          $(".answeroptionsgrp").append(newFormLabel);
+
+          let newForm = $("<input>");
+          newForm.attr("type", "text");
+          newForm.attr("class", "answeroptions");
+          newForm.attr("id", `answeroptions${currentVal}`);
+          // $(`answeroptions${i}`).focusin();
+          $(".answeroptionsgrp").append(newForm);
+          $(`#answeroptions${currentVal}`).focus();
+          statarr[currentVal] = 1;
+          console.log("Statarr ", statarr);
+        };
+
+        $(".pollquestion").on("keyup", function(e) {
+          if (e.keyCode === 13) {
+            console.log("in poll  question listener key code 13");
+            let k = 0;
+            while ($(`#answeroptions${k}`) && k < 20) {
+              //
+              $(`#answeroptions${k}`).remove();
+              k++;
+            }
+            $("#restOfPage").toggleClass("submithide");
+            $("#submitform").removeClass("submithide");
+            $("#answersHeader").removeClass("submithide");
+            addNewInputLine(0);
+          }
+        });
+
+        $(".answeroptionsgrp").on("keyup", function(e) {
+          // console.log("in listener function , i ", i, " keycode ", e.keyCode);
+
+          $(".answeroptions").on("keyup", function(f) {
+            let num = parseInt(
+              event.currentTarget.id.replace("answeroptions", "")
+            );
+
+            if (
+              f.keyCode === 13 &&
+              statarr[num + 1] === undefined &&
+              $(`#${event.currentTarget.id}`).val() !== ""
+            ) {
+              addNewInputLine(i);
+            }
+          });
+        });
+
+        $(".answersubmit").on("click", function(e) {
+          console.log("in listener function  for submit keycode ", e.keyCode);
+          //
+          // get data from input forms to variables
+          let question = $("#pollquestion").val();
+          let ansarr = [];
+          let tmp = "";
+          let k = 0;
+          while (k < i) {
+            tmp = $(`#answeroptions${k}`).val();
+            if (tmp.length > 0) {
+              ansarr.push(tmp);
+            }
+            k++;
+          }
+
+          let ps = $("#PublishStatus").is(":checked");
+          let ra = $("#RestrictAccess").is(":checked");
+
+          console.log(question, ansarr, ps, ra);
+          //
+          // set up to set XML request
+          var xhr = new XMLHttpRequest();
+          xhr.open("POST", "/poll/new", true);
+          //Send the proper header information along with the request
+          xhr.setRequestHeader(
+            "Content-Type",
+            "application/x-www-form-urlencoded"
+          );
+          xhr.onreadystatechange = function() {
+            // Call a function when the state changes.
+            if (
+              this.readyState === XMLHttpRequest.DONE &&
+              this.status === 200
+            ) {
+              // Request finished. Do processing here.
+            }
+          };
+          //send request
+          xhr.send(
+            `Question=${question}&Answeroptions=${ansarr}&PublishStatus=${ps}&RestrictAccess=${ra}`
+          );
+          alert("Your poll has been created!");
+          $("#pollquestion").val("");
+          $("#ansgrp").val("");
+          i = 0;
+          statarr = [];
+
+          $("#restOfPage").toggleClass("submithide");
+        });
+      });
+    </script>
+  </body>
+</html>

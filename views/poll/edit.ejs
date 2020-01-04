@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <%- include ../../public/ejs/header_links.ejs %> <%- include
+    ../partials/header_links.ejs %>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        Welcome <%=currentUser.username%>!
+        <h1>Edit your polls</h1>
+        <div class="headersubtext">
+          Your chance to opine!
+        </div>
+
+        <div class="pollssection">
+          <div class="headerlinks rdr-shadow-2dp ">
+            <a href="/">Home</a>
+          </div>
+          <div
+            class="headerlinks rdr-shadow-2dp col-md-6 col-xs-12 col-lg-6 col-sm-12"
+          >
+            <a class="headerlinks" href="/poll/new">Add a new poll</a>
+          </div>
+        </div>
+      </header>
+    </div>
+
+    <script>
+      $(() => {
+        //
+        console.log("COMMONSCRIPTS.js running  ----- ONPAGE");
+      });
+    </script>
+  </body>
+</html>

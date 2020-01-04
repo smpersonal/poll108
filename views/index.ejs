@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <%- include ../public/ejs/header_links.ejs %>
+    <!--  -->
+    <% include ./partials/head.ejs%>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+
+        <header>
+            <h1>WELCOME TO THE WORLD OF POLLS</h1>
+            <div class="headersubtext">
+              Add and Interact with Polls. Let's get started!
+            </div>
+          </header>
+    
+        <% if(currentUser) { %>
+          <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12" style="display:block; margin:auto;width:auto; text-align: center; ">
+          <h4>Hello <%=currentUser.username%>! </h4>
+        </div>
+<section class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+    <div class="mainindexcards rdr-shadow-2dp">
+        <a href="/poll/index">POLLS</a>
+      </div>
+ 
+      <div class="mainindexcards rdr-shadow-2dp">
+      <a href="/poll/edit">EDIT</a>
+    </div>
+    <div class="mainindexcards rdr-shadow-2dp">
+        <form action="/sessions?_method=DELETE" method="POST" style="margin-bottom: 0;">
+          <input type="submit" value="Logout"  class=" btn" style="background-color: var(--rdr-coral);font-size:25px;"/>
+          <!-- <input type="submit" value="Logout"  class="waves-effect waves-light btn"/> -->
+   
+    </div>
+   </section>
+
+
+
+        <% } else { %>
+
+
+          <section class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+              <div class="mainindexcards rdr-shadow-2dp">
+                  <a href="/poll/index">POLLS</a>
+                </div>          
+              <div class="mainindexcards rdr-shadow-2dp">
+                <a href="/sessions/new">LOGIN</a>
+              </div>
+              <div class="mainindexcards rdr-shadow-2dp">
+                <a href="/user/new">SIGNUP</a>
+              </div>
+            </section>
+          
+          
+          
+
+
+        <% } %>
+      </div>
+
+
+      
+    </div>
+  </body>
+</html>
