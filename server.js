@@ -15,9 +15,6 @@ app.listen(port, () => {
 });
 // require("dotenv").config();
 
-const dbURI = (process.env.MONGODB_URI || "mongodb://localhost:27017/pollappdb");
-
-console.log("..... dbURI ", dbURI);
 //Mongoose
 // const mongoose = require("mongoose");
 // mongoose.connect("mongodb://localhost:27017/pollappdb", {
@@ -25,6 +22,10 @@ console.log("..... dbURI ", dbURI);
 // });
 
 const mongoose = require("mongoose");
+console.log("..... MONGODB_URI ", process.env.MONGODB_URI);
+const dbURI = (process.env.MONGODB_URI || "mongodb://localhost:27017/pollappdb");
+console.log("..... dbURI ", dbURI);
+
 mongoose.connect(dbURI, {
   useNewUrlParser: true
 });
