@@ -8,7 +8,7 @@ app.use(express.json());
 // app.use(express.static(__dirname + "/public")); // static files middleware
 app.use(express.static("public"));
 //PORT
-const port = 3000;
+const port = (process.env.PORT || 3000);
 // CONNECTIONS
 app.listen(port, () => {
   console.log("listening on port: ", port);
